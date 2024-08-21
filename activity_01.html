@@ -3,65 +3,61 @@
  Licensed under The Universal Permissive License (UPL), Version 1.0
  as shown at https://oss.oracle.com/licenses/upl/
  -->
- <div class="oj-hybrid-padding">
-    <h5>Input Text</h5>
+<div class="oj-hybrid-padding">
+  <h5>Input Text</h5>
+
+  <oj-c-input-text
+        id="text-input"
+        raw-value="{{username}}"
+        label-hint="Enter username"
+        label-edge="inside"></oj-c-input-text>
+  </oj-c-input-text>
+
+        <div>
+          <h5> Hello <oj-bind-text value="[[username]]"/> </h5>
+        </div>
+
+    <h5>Input Number</h5>
+
+  <oj-c-input-number
+        id="number-input"
+        raw-value="{{phone}}"
+        label-hint="Enter phone"
+        label-edge="inside" 
+        min=1111111111
+        max=9999999999>
+  </oj-c-input-number>
+
+        <div>
+          <h5> Hello <oj-bind-text value="[[phone]]"/> </h5>
+        </div>
+        
+
+      <h5>Input Password</h5>
+  <oj-c-input-password required="true" label-hint="required"></oj-c-input-password>
+
+  <h5>Input Date and Time</h5>
+  <oj-input-date-time label-hint="Enter date and time"></oj-input-date-time>
+
+  <h5>Radio buttons</h5>
+  <oj-c-radioset
+  id="rowDirectionEnabledRadioset"
+  value="Bangalore"
+  direction="row"
+  options="[[laptopOptions]]" ></oj-c-radioset>
+
+  <h5>Checkbox</h5>
+  <oj-c-checkbox id="enabledCheckboxOn" value="true">I accept the terms and conditions</oj-c-checkbox>
+
+  <h5>Progress Bar</h5>
+  <oj-slider min="0" max="100" value="50" label-hint="Your Progress"></oj-slider>
+
+  <oj-select-single id="city" label-hint="Select City" value="{{selectedCity}}">
+    <oj-option value="kn">Bangalore</oj-option>
+    <oj-option value="mh">Pune</oj-option>
+    <oj-option value="mh">Mumbai</oj-option>
+  </oj-select-single>
   
-    <oj-c-input-text
-          id="text-input"
-          raw-value="{{username}}"
-          label-hint="Enter username"
-          label-edge="inside"></oj-c-input-text>
-    </oj-c-input-text>
-  
-          <div>
-            <h5> Hello <oj-bind-text value="[[username]]"/> </h5>
-          </div>
-  
-      <h5>Input Number</h5>
-  
-    <oj-c-input-number
-          id="number-input"
-          raw-value="{{phone}}"
-          label-hint="Enter phone"
-          label-edge="inside" 
-          min=1111111111
-          max=9999999999>
-    </oj-c-input-number>
-  
-          <div>
-            <h5> Hello <oj-bind-text value="[[phone]]"/> </h5>
-          </div>
-          
-  
-        <h5>Input Password</h5>
-    <oj-c-input-password required="true" label-hint="required"></oj-c-input-password>
-  
-    <h5>Input Date and Time</h5>
-    <oj-input-date-time label-hint="Enter date and time"></oj-input-date-time>
-  
-    <h5>Radio buttons</h5>
-    <oj-c-radioset
-    id="rowDirectionEnabledRadioset"
-    value="Bangalore"
-    direction="row"
-    options="[[laptopOptions]]" ></oj-c-radioset>
-  
-    <h5>Checkbox</h5>
-    <oj-c-checkbox id="enabledCheckboxOn" value="true">I accept the terms and conditions</oj-c-checkbox>
-  
-    <h5>Progress Bar</h5>
-    <oj-slider min="0" max="100" value="50" label-hint="Your Progress"></oj-slider>
-  
-    <oj-c-select-single
-    value='{{((valueLength()) === "long")? "IE" : 
-        (valueLength() === "short") ? "CH" : null}}'
-    disabled="[[disableFormControls]]"
-    messages-custom="[[messages]]"
-    required="[[required]]"
-  
-    data="[[browsersDP]]"
-    item-text="label"></oj-c-select-single>
-  
-    <oj-c-button id="button" on-oj-action="[[buttonClick]]" label="Alert Hello World"></oj-c-button>
-  
-  </div>
+  <oj-c-button id="button" on-oj-action="[[buttonClick]]" label="Click here"></oj-c-button>
+
+</div>

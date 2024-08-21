@@ -16,13 +16,16 @@ import 'oj-c/checkbox';
 import 'oj-c/select-single';
 import "oj-c/radioset";
 import 'ojs/ojslider';
-import "oj-c/button";
+import "oj-c/button"; 
+import 'ojs/ojselectsingle';
+import 'ojs/ojoption';
 
-class activity_01 {
+class DashboardViewModel {
   username: ko.Observable<string>;
   phone: ko.Observable<number>;
   laptopOptions: Array<{ value: string; label: string }>;
   checkboxValue: ko.Observable<boolean>;
+  selectedCity = ko.observable<string>();
   
   constructor(){
     this.username= ko.observable("");
@@ -34,7 +37,10 @@ class activity_01 {
     ];
     this.checkboxValue = ko.observable(false);
 
-    
+    this.selectedCity.subscribe((newValue) => {
+      console.log('Selected city:', newValue);
+  });
+
   }
   public buttonClick = (event : Event) =>{
     alert("Hello World");
@@ -42,4 +48,4 @@ class activity_01 {
   }
 }
 
-export = activity_01;
+export = DashboardViewModel;
